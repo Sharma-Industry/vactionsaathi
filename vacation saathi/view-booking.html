@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Bookings</title>
+  <link rel="stylesheet" href="travels.css">
+  <style>
+  .booking-summary .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .booking-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    
+  }
+
+  .booking-card:hover {
+    transform: scale(1.02);
+  }
+
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  </style>
+</head>
+<script>
+  // Redirect if not logged in
+  if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+  }
+</script>
+
+<body>
+  
+  <section class="booking-summary">
+    <div class="container">
+      <h1>All Bookings (Last 100)</h1>
+      <div id="all-bookings"></div>
+      <a href="Admin.html">← Back to Home</a>
+    </div>
+  </section>
+  <script>
+    // Retrieve the bookings from localStorage
+  
+  const bookings = JSON.parse(localStorage.getItem("allBookings")) || [];
+  const container = document.getElementById("all-bookings");
+
+  // Last 100 bookings, original order
+  const last100 = bookings.length > 100 ? bookings.slice(-100) : bookings;
+
+  if (last100.length > 0) {
+    last100.forEach((b, index) => {
+      const card = document.createElement("div");
+      card.className = "booking-card";
+      card.innerHTML = `
+        <h3>Booking #${index + 1}</h3>
+        <p><strong>Name:</strong> ${b.name}</p>
+        <p><strong>Email:</strong> ${b.email}</p>
+        <p><strong>Check-in:</strong> ${b.checkin}</p>
+        <p><strong>Check-out:</strong> ${b.checkout}</p>
+        <p><strong>Travelers:</strong> ${b.travelers}</p>
+        <p><strong>Requests:</strong> ${b.requests || 'None'}</p>
+        <p><strong>Base Price:</strong> ₹${b.basePrice}</p>
+        <p><strong>Taxes:</strong> ₹${b.taxes}</p>
+        <p><strong>Total:</strong> ₹${b.totalPrice}</p>
+        <small><em>Booked on: ${new Date(b.date).toLocaleString()}</em></small>
+      `;
+      container.appendChild(card);
+    });
+  } else {
+    container.innerHTML = `<p>No bookings found.</p>`;
+  }
+</script>
+  <button onclick="logout()">Logout</button>
+  <script>
+    function logout() {
+      sessionStorage.removeItem("adminLoggedIn");
+      window.location.href = "admin.html";
+    }
+  </script>  
+</body>
+</html>

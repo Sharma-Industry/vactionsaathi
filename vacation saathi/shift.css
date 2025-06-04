@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+    background:linear-gradient( to top,rgb(0,0,0,0.5)50%, rgb(0,0,0,0.5)50%),url(wp3470415.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 109vh;
+}
+.icon{
+    width: 200px;
+    float: left;
+    height: 70px;
+    
+}
+.logo{
+    color: #ff7200;
+     font-size: 35px;
+     font-family: Arial,;
+     padding-left: 20px;
+     float: left;
+     padding-top: 10px;
+}
+.form{
+    width: 800px; 
+    height: 450px; ;
+    background:linear-gradient( to top,rgb(0,0,0,0.5)50%, rgb(0,0,0,0.5)50%);
+    position: absolute;
+    top: 20px;
+    left: 400px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ffff;
+}
+.input,select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+input[type="submit"]:hover{
+    background: #ff7200;
+    width: 100px;
+    border-radius: 10px;
+}
+.form h2{
+    text-align: center;
+    color: #ffff
+}
+.form input{
+    width: 120px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-right: none;
+    border-left: none;
+    color: #ffff;
+    text-shadow: 10px;
+    font-size: 15px;
+    word-spacing: 5px;
+    margin-top: 30px;
+    font-family:sans-serif ;
+}
+.form h2:hover{
+    color:#ff7200;
+}
+.btnn{
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffff;
+    transition: 0.4s ease;
+}
+.btnn:hover{
+    background: #ffff;
+    color:#ff7200;
+}
+.btnn a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

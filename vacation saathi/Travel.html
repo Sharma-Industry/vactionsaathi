@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Saathi-Travel</title>
+    <link rel="stylesheet" href="travels.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <span> VACATION SAATHI </span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+             <div class="search-box">
+                 <input type="text" id="mainSearch" placeholder="Search destinations...">
+                 <button class="search-btn" id="revealBtn">
+                  <i class="fa-solid fa-magnifying-glass"></i> <!-- Correct Icon -->
+                </button>
+              </div>
+            
+              <div class="from-to-fields" id="fromToSection">
+                  <label>From:</label>
+                  <input type="text" name="from" placeholder="Enter departure city" required>
+                  <label>To:</label>
+                  <input type="text" name="to" placeholder="Enter destination city" required>
+              </div>
+             <h1>Explore the World with Us</h1>
+             <h2>Discover incredible places, unique experiences, and unforgettable Journeys Vacation Saathi</h2>
+        </div>
+    </section>
+
+    <!-- Featured Destinations with Reviews -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2>Featured Destinations</h2>
+            <div class="destination-grid">
+                <div class="destination-card" data-id="1">
+                    <img src="https://lp-cms-production.imgix.net/2019-06/shutterstock_160155083.jpg" alt="Switzerland">
+                    <div class="card-content">
+                        <h3>Lucerne,Switzerland</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(125 reviews)</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="reviewer">John D.</span>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Beautiful island, but could be expensive."</p>
+                            </div>
+                        </div>
+                        <div class="price">From $350</div>
+                        <button class="book-btn"><a href="travels.html?destination=lucerne">Book Now</a></button>
+                        <button class="review-btn" onclick="showReviewForm(1)">Write a Review</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-id="2">
+                    <img src="https://etias.com/assets/uploads/8%20Things%20To%20Do%20in%20Paris,%20France.jpg" alt="paris">
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(98 reviews)</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="reviewer">Jane Doe</span>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <p>"Amazing experience! The Eiffel Tower at night was breathtaking."</p>
+                            </div>
+                        </div>
+                        <div class="price">From $320</div>
+                        <button class="book-btn"><a href="travels.html?destination=paris">Book Now</a>
+                        </button>
+                        <button class="review-btn" onclick="showReviewForm(2)">Write a Review</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-id="3">
+                    <img src="https://c8.alamy.com/comp/2ATXX7E/moscow-kremlin-at-night-russia-beautiful-view-of-the-moscow-city-center-in-evening-panorama-of-famous-moscow-kremlin-and-bolshoy-kamenny-bridge-mo-2ATXX7E.jpg" alt="Russia">
+                    <div class="card-content">
+                        <h3>Moscow,Russia</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(156 reviews)</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="reviewer">Mike S.</span>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"A city that dances with shadows."</p>
+                            </div>
+                        </div>
+                        <div class="price">From $300</div>
+                        <button class="book-btn"><a href="travels.html?destination=moscow">Book Now</a></button>
+                        <button class="review-btn" onclick="showReviewForm(3)">Write a Review</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-id="4">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/c7/90/94/caption.jpg?w=1400&h=1400&s=1" alt="bali">
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(156 reviews)</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="reviewer">Leoroy S.</span>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Bali is a bridge between what you are and what you can become."</p>
+                            </div>
+                        </div>
+                        <div class="price">From $275</div>
+                        <button class="book-btn"><a href="travels.html?destination=bali">Book Now</a></button>
+                        <button class="review-btn" onclick="showReviewForm(4)">Write a Review</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-id="5">
+                    <img src="https://uceap.universityofcalifornia.edu/sites/default/files/2019-08/business-and-entrepreneurship-in-london-M2.jpg" alt="London">
+                    <div class="card-content">
+                        <h3>London,U.k</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(156 reviews)</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="reviewer">Eric S.</span>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Oh, I love London Society! It is entirely composed now of beautiful idiots and brilliant lunatics. Just what society should be."</p>
+                            </div>
+                        </div>
+                        <div class="price">From $300</div>
+                        <button class="book-btn"><a href="travels.html?destination=london">Book Now</a></button>
+                        <button class="review-btn" onclick="showReviewForm(5)">Write a Review</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-id="6">
+                    <img src="https://www.tourmyindia.com/blog//wp-content/uploads/2018/11/Dubai-Tourist-Attractions.jpg" alt="Dubai">
+                    <div class="card-content">
+                        <h3>Dubai,U.A.E</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(156 reviews)</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="reviewer">Mary Ann.</span>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Summer nights & Dubai skies."</p>
+                            </div>
+                        </div>
+                        <div class="price">From $285</div>
+                        <button class="book-btn"><a href="travels.html" >Book Now</a></button>
+                        <button class="review-btn" onclick="showReviewForm(6)">Write a Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Booking Features Section -->
+ <section id="booking-section" class="booking-section">
+     <div class="container">
+         <h2>Book Your Journey</h2>
+         <div class="booking-grid">
+             <!-- Flight Booking -->
+             <div class="booking-card">
+                <i class="fas fa-plane"></i>
+                <h3>Flight Booking</h3>
+                <p>Book domestic and international flights at best prices.</p>
+                <form>
+                    <input type="text" placeholder="From" required>
+                    <input type="text" placeholder="To" required>
+                    <input type="date" required>
+                    <button class="book-btn">Book Flight</button>
+                </form>
+             </div>
+
+             <!-- Hotel Booking -->
+             <div class="booking-card">
+                 <i class="fas fa-hotel"></i>
+                 <h3>Hotel Booking</h3>
+                 <p>Find hotels that suit your comfort and budget.</p>
+                 <form>
+                     <input type="text" placeholder="Destination" required>
+                     <input type="date" placeholder="Check-in" required>
+                     <input type="date" placeholder="Check-out" required>
+                     <button class="book-btn">Book Hotel</button>
+                 </form>
+             </div>
+
+             <!-- Tours Booking -->
+             <div class="booking-card">
+                 <i class="fas fa-route"></i>
+                 <h3>Tours Booking</h3>
+                 <p>Explore curated tour packages for amazing experiences.</p>
+                 <form>
+                     <input type="text" placeholder="Location" required>
+                     <select required>
+                         <option value="">Select Tour Type</option>
+                         <option>Adventure</option>
+                         <option>Family</option>
+                         <option>Honeymoon</option>
+                         <option>Group</option>
+                      </select>
+                     <button class="book-btn">Book Tour</button>
+                 </form>
+              </div>
+         </div>
+       </div>
+  </section>
+
+    <!-- Holiday Specials Section -->
+ <section id="holidays" class="holiday-specials">
+     <div class="container">
+         <h1>Holiday Specials</h1>
+         <div class="holiday-grid">
+             <!-- Winter Tour -->
+             <div class="holiday-card winter">
+                 <img src="https://www.christmascentral.com/product_images/uploaded_images/sunny-winter-scene-lars-eberhardt-bcg-yva8tha-unsplash-960x600.jpg" alt="Winter Tour">
+                 <div class="holiday-content">
+                     <h3><i class="fas fa-snowflake"></i> Winter Wonderland</h3>
+                     <p>Explore snow-capped mountains, cozy cabins, and magical landscapes.</p>
+                     <div class="price">From $1100</div>
+                     <button class="book-btn"><a href="travels.html">Book Winter Tour</a></button>
+                 </div>
+             </div>
+
+             <!-- Summer Tour -->
+             <div class="holiday-card summer">
+                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Summer Tour">
+                 <div class="holiday-content">
+                     <h3><i class="fas fa-sun"></i> Summer Escapes</h3>
+                     <p>Beach vibes, sunny skies, and the perfect tropical getaway.</p>
+                     <div class="price">From $950</div>
+                     <button class="book-btn"><a href="travels.html">Book Summer Tour</a></button>
+                  </div>
+              </div>
+          </div>
+     </div>
+ </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>Recent Reviews</h2>
+            <div class="reviews-filter">
+                <select id="sort-reviews">
+                    <option value="recent">Most Recent</option>
+                    <option value="rating-high">Highest Rated</option>
+                    <option value="rating-low">Lowest Rated</option>
+                </select>
+            </div>
+            <div class="reviews-grid">
+                <!-- Review items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+      
+    <!-- Review Form Modal -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Write a Review</h3>
+            <form id="review-form">
+                <div class="form-group">
+                    <label>Your Name:</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating:</label>
+                    <div class="rating-input">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Your Review:</label>
+                    <textarea required></textarea>
+                </div>
+                <button type="submit" class="submit-review-btn">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Why Choose Us</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Handpicked Destinations</h3>
+                        <p>Carefully selected locations for unforgettable experiences</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Best Price Guarantee</h3>
+                        <p>We offer competitive prices for all our travel packages</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock assistance for worry-free travel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Name..." required>
+                    <input type="email" placeholder="Your Email..." required>
+                    <input type="contact" placeholder="Your contact No..." required>
+                    <textarea placeholder="Feedback..." required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>NH 9, Road, Delhi, Moradabad, Uttar Pradesh 244001</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>1800 270 1490</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>tmu.ac.in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vacation Saathi</h3>
+                    <p>Your journey begins with us. Explore the world's most beautiful destinations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Vacation Saathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+ <script src="Travel.js"></script>
+  <script>
+     const revealBtn = document.getElementById('revealBtn');
+     const fromToSection = document.getElementById('fromToSection');
+     const mainSearch = document.getElementById('mainSearch');
+
+     // Show From/To section on button click
+     revealBtn.addEventListener('click', function (e) {
+      e.preventDefault(); // prevent actual form submit if inside form
+      if (mainSearch.value.trim() !== "") {
+        fromToSection.style.display = 'block';
+       } else {
+        alert("Please enter a destination first.");
+       }
+      });
+  </script>
+</body>
+</html>
